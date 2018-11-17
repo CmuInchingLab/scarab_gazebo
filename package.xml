@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>scarab_gazebo</name>
+  <version>0.0.0</version>
+  <description>
+    Gazebo plugins for the Scarab simulator
+  </description>
+  <maintainer email="korton@andrew.cmu.edu">Karen Orton</maintainer>
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <export>
+    <gazebo_ros
+      gazebo_media_path="${prefix}"
+      gazebo_model_path="${prefix}/models"
+      plugin_path="${prefix}/lib"/>
+  </export>
+</package>
+
+
