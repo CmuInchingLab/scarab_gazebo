@@ -39,7 +39,7 @@
         <collision name="victoria_crater_collision">
           <geometry>
             <mesh>
-              <uri>file://opportunityVictoriaCrater.dae</uri>
+              <uri>file://victoria_crater_texture.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -47,7 +47,7 @@
         <visual name="victoria_crater">
           <geometry>
             <mesh>
-              <uri>file://opportunityVictoriaCrater.dae</uri>
+              <uri>file://victoria_crater_texture.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>

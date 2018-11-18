@@ -1,0 +1,19 @@
+<!DOCTYPE MeshLabDocument>
+<MeshLabProject>
+ <MeshGroup>
+  <MLMesh filename="victoria_crater_texture.dae" label="opportunityVictoriaCrater.stl">
+   <MLMatrix44>
+1 0 0 0 
+0 1 0 0 
+0 0 1 0 
+0 0 0 1 
+</MLMatrix44>
+  </MLMesh>
+ </MeshGroup>
+ <RasterGroup>
+  <MLRaster label="120m_landscape_smooth_tri.jpg">
+   <VCGCamera FocalMm="48.1447" CameraType="0" PixelSizeMm="0.0369161 0.0369161" CenterPx="694 469" LensDistortion="0 0" TranslationVector="-7.62939e-6 0 -699.674 1" RotationMatrix="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 " ViewportPx="1389 939"/>
+   <Plane semantic="1" fileName="120m_landscape_smooth_tri.jpg"/>
+  </MLRaster>
+ </RasterGroup>
+</MeshLabProject>
