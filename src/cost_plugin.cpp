@@ -36,26 +36,26 @@ public:
     ROS_INFO("PLUGIN INITIALIZED. YEAHHHHHHH BOIIII");
   }
 
-    double heightMapZ(double x, double y){
-        if (world_ptr == NULL){ // only initialize once
-            // getting the pointer to the HeightmapShape
-            world_ptr = physics::get_world();
-            model = world_ptr->GetModel("worldHeightmap");
-            physics::CollisionPtr collision = model->GetLink("link")->GetCollision("collision");
-            heightmap = boost::dynamic_pointer_cast<physics::HeightmapShape>(collision->GetShape());
-        }
-
-        // coordinate transform from regular Word (x,y) to the HeightmapShape (index_x,index_y) 
-        math::Vector3 size = this->heightmap->GetSize(); 
-        math::Vector2i vc = this->heightmap->GetVertexCount();
-        int index_x = (((x + size.x/2)/size.x ) * vc.x - 1) ;
-        int index_y = (((-y + size.y/2)/size.y ) * vc.y - 1) ;
-
-        //  getting the height :
-        double z =  this->heightmap->GetHeight( index_x , index_y ); 
-
-        return z;
+double heightMapZ(double x, double y){
+    if (world_ptr == NULL){ // only initialize once
+        // getting the pointer to the HeightmapShape
+        world_ptr = physics::get_world();
+        model = world_ptr->GetModel("worldHeightmap");
+        physics::CollisionPtr collision = model->GetLink("link")->GetCollision("collision");
+        heightmap = boost::dynamic_pointer_cast<physics::HeightmapShape>(collision->GetShape());
     }
+
+    // coordinate transform from regular Word (x,y) to the HeightmapShape (index_x,index_y) 
+    math::Vector3 size = this->heightmap->GetSize(); 
+    math::Vector2i vc = this->heightmap->GetVertexCount();
+    int index_x = (((x + size.x/2)/size.x ) * vc.x - 1) ;
+    int index_y = (((-y + size.y/2)/size.y ) * vc.y - 1) ;
+
+    //  getting the height :
+    double z =  this->heightmap->GetHeight( index_x , index_y ); 
+
+    return z;
+}
 
 };
 GZ_REGISTER_WORLD_PLUGIN(CostPlugin);
@@ -75,7 +75,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "main_scarab");
   ros::NodeHandle n;
 //   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("cost", 1000);
-    ros::Subscriber sub = n.subscribe("/gazebo/model_states", 100, pose_cb);
+  ros::Subscriber sub = n.subscribe("/gazebo/model_states", 100, pose_cb);
   ros::Rate loop_rate(10);
 
   int count = 0;
@@ -86,7 +86,6 @@ int main(int argc, char **argv)
     // chatter_pub.publish(msg);
 
     ros::spinOnce();
-
     loop_rate.sleep();
     // ++count;
   }

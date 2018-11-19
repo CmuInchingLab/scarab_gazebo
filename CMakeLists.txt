@@ -13,9 +13,9 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(gazebo REQUIRED)
 
 link_directories(${GAZEBO_LIBRARY_DIRS})
-include_directories(${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
+include_directories(include ${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
 
-include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
+#include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
 
 # Build whatever you need here
 #add_library(...) # TODO
@@ -29,6 +29,11 @@ catkin_package(
     LIBRARIES
 )
 
-#add_executable(scarab_gazebo src/cost.cpp)
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
+add_executable("${PROJECT_NAME}_bin" src/cost_plugin.cpp)
+
+target_link_libraries("${PROJECT_NAME}_bin" ${catkin_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+
+# now we rename scarab_gazebo-bin executable to scarab_gazebo using target properties
+set_target_properties("${PROJECT_NAME}_bin"
+        PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
