@@ -21,5 +21,9 @@
     <remap from="/joint_states" to="/scarab/joint_states" />
   </node-->
 
+  <!--node pkg="scarab_gazebo" type="scarab_gazebo" name="scarab_gazebo" output = "screen">
+    <param name ="/use_sim_time" value="true"/>
+  </node-->
+
 
 </launch>

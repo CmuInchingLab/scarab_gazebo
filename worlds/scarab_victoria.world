@@ -56,5 +56,6 @@
       </link>
       <static>true</static>
     </model>
+    <plugin name="scarab_gazebo" filename="libscarab_gazebo.so"/>
   </world>
 </sdf>
