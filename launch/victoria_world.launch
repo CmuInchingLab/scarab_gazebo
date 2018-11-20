@@ -25,5 +25,6 @@
     <param name ="/use_sim_time" value="true"/>
   </node>
 
+  <include file="$(find scarab_planner)/launch/scarab_planner.launch"/>
 
 </launch>
