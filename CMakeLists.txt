@@ -9,10 +9,11 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
 )
 
-add_service_files(DIRECTORY srv FILES getZ.srv)
+#add_service_files(DIRECTORY srv FILES getZ.srv)
+add_message_files(DIRECTORY msgs FILES PointArr.msg)
 
 ## Generate added messages and services
-generate_messages(DEPENDENCIES std_msgs)
+generate_messages(DEPENDENCIES std_msgs geometry_msgs)
 
 # Depend on system install of Gazebo
 find_package(gazebo REQUIRED)
