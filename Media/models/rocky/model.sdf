@@ -7,7 +7,7 @@
           <geometry>
             <heightmap>
               <uri>model://rocky_mtn/materials/textures/rocky_mtn.png</uri>
-              <size>150 150 50</size>
+              <size>150 150 50</size>s
               <pos>0 0 0</pos>
             </heightmap>
             <mesh>
@@ -18,6 +18,10 @@
         </collision>
         <visual name="visual_abcedf">
           <geometry>
+<!--             <mesh>
+              <uri>model://rocky_mtn/materials/textures/rocky_mtn.png</uri>
+              <scale>1 1 1</scale>
+            </mesh> -->
             <heightmap>
               <use_terrain_paging>false</use_terrain_paging>
               <texture>
