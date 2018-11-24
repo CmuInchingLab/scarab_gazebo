@@ -6,5 +6,5 @@ To run the simulation for the Rocky Mountain environment:
 roslaunch scarab_gazebo rocky_world.launch
 ```
 TODO:
-1) Match IDs between request for z value, and reply
+1) Find out why robot falls through Rocky model heightmap
 2) Ask teammates if querying series of Points is suitable for getSucessors()
