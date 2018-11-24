@@ -8,8 +8,12 @@
             <heightmap>
               <uri>model://rocky_mtn/materials/textures/rocky_mtn.png</uri>
               <size>150 150 50</size>
-              <pos>0 -100 0</pos>
+              <pos>0 0 0</pos>
             </heightmap>
+            <mesh>
+              <uri>model://rocky_mtn/materials/textures/rocky_mtn.png</uri>
+              <scale>1 1 1</scale>
+            </mesh>
           </geometry>
         </collision>
         <visual name="visual_abcedf">

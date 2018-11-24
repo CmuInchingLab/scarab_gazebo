@@ -4,7 +4,7 @@
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
 #include <gazebo/physics/physics.hh>
-#include <ignition/math/Vector3.hh>
+// #include <ignition/math/Vector3.hh>
 #include <gazebo/math/Vector2i.hh>
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/Point.h>
@@ -77,9 +77,11 @@ public:
       this->size = this->heightmap->GetSize();
       this->vc = this->heightmap->GetVertexCount();
 
-      // physics::ModelPtr robot = world_ptr->getModel("scarab");
+      physics::ModelPtr robot = world_ptr->GetModel("scarab");
       // math::Vector3 bot_on_surface(0,200,0);
-      // robot->setWorldPose(bot_on_surface, true, true);
+      cout <<"Set robot on top of the surface" << endl;
+      robot->SetWorldPose(math::Pose(0, 0, 50, 0, 0, 0));
+
     }
 
     if (pointArr->points.size() > 0){
