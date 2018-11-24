@@ -14,7 +14,7 @@
         args="-urdf -param robot_description -model myrobot
               -x $(arg x) -y $(arg y) -z $(arg z)
               -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/-->
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model scarab -z 50" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model scarab -y 30 -z 50" />
 
   <!--node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub">
     <remap from="robot_description" to="different_robot_description" />
