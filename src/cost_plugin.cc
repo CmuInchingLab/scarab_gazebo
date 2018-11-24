@@ -22,6 +22,7 @@ private:
   physics::ModelPtr model = NULL;
   physics::HeightmapShapePtr heightmap = NULL;
   physics::CollisionPtr collision = NULL;
+
   ros::ServiceServer service;
   unique_ptr<ros::NodeHandle> rosNode;  // A node use for ROS transport
   ros::CallbackQueue rosQueue;  // A ROS callbackqueue that helps process messages
@@ -69,13 +70,16 @@ public:
   {
     if (world_ptr == NULL)
     { // only initialize once
-      // getting the pointer to the HeightmapShape
-      world_ptr = physics::get_world();
+      world_ptr = physics::get_world();       // getting the pointer to the HeightmapShape
       model = world_ptr->GetModel("heightmap");
       physics::CollisionPtr collision = model->GetLink("link")->GetCollision("collision");
       heightmap = boost::dynamic_pointer_cast<physics::HeightmapShape>(collision->GetShape());
       this->size = this->heightmap->GetSize();
       this->vc = this->heightmap->GetVertexCount();
+
+      // physics::ModelPtr robot = world_ptr->getModel("scarab");
+      // math::Vector3 bot_on_surface(0,200,0);
+      // robot->setWorldPose(bot_on_surface, true, true);
     }
 
     if (pointArr->points.size() > 0){
@@ -109,4 +113,4 @@ public:
   }
 };
 GZ_REGISTER_WORLD_PLUGIN(CostPlugin);
-} // namespace gazebo
+} 
