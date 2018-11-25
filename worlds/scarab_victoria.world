@@ -33,10 +33,10 @@
       <direction>0.1 0.1 -1</direction>
       <cast_shadows>false</cast_shadows>
     </light>
-    <model name="Victoria_Crater">
-      <link name="victoria_crater_link">
+    <model name="heightmap">
+      <link name="link">
         <pose>0 0 0 0 0 0</pose>
-        <collision name="victoria_crater_collision">
+        <collision name="collision">
           <geometry>
             <mesh>
               <uri>file://victoria_crater_texture.dae</uri>
@@ -44,7 +44,7 @@
             </mesh>
           </geometry>
         </collision>
-        <visual name="victoria_crater">
+        <visual name="visual_abcedf">
           <geometry>
             <mesh>
               <uri>file://victoria_crater_texture.dae</uri>

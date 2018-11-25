@@ -8,3 +8,4 @@ roslaunch scarab_gazebo rocky_world.launch
 TODO:
 1) Find out why robot falls through Rocky model heightmap
 2) Ask teammates if querying series of Points is suitable for getSucessors()
+
