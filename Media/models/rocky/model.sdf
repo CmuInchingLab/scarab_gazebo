@@ -10,10 +10,10 @@
               <size>150 150 50</size>s
               <pos>0 0 0</pos>
             </heightmap>
-            <mesh>
+<!--             <mesh>
               <uri>model://rocky_mtn/materials/textures/rocky_mtn.png</uri>
               <scale>1 1 1</scale>
-            </mesh>
+            </mesh> -->
           </geometry>
         </collision>
         <visual name="visual_abcedf">
