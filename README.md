@@ -3,7 +3,7 @@ Gazebo simulation files for Scarab robot in some random place in the Rocky Mount
 
 To run the simulation for the Rocky Mountain environment:
 ```
-roslaunch scarab_gazebo rocky_world.launch
+roslaunch scarab_gazebo scarab.launch world:=rocky
 ```
 TODO:
 1) Find out why robot falls through Rocky model heightmap
