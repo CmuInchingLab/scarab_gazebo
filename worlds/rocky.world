@@ -20,7 +20,7 @@
     <max_step_size>0.001</max_step_size>
   </physics>
   <include>
-      <uri>file://rocky</uri>
+      <uri>model://rocky_mtn</uri>
   </include>
   <include>
       <uri>model://sun</uri>
