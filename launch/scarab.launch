@@ -20,6 +20,7 @@
 
   <include file="$(find scarab_planner)/launch/scarab_planner.launch"/>
   <include file="$(find scarab_control)/launch/scarab_control.launch"/>
+  <include file="$(find planner_to_control)/launch/planner_to_control.launch"/>	
 
   <!-- Spawn a robot into Gazebo -->
   <!-- Apparently spawning scarab from 50m is too high, so it falls through the terrain. 
