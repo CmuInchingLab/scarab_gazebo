@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 #add_service_files(DIRECTORY srv FILES getZ.srv)
 add_message_files(DIRECTORY msgs FILES PointArr.msg)
+add_message_files(DIRECTORY msgs FILES control.msg)
 
 ## Generate added messages and services
 generate_messages(DEPENDENCIES std_msgs geometry_msgs)
